@@ -1,17 +1,15 @@
-[project]
+[tool.poetry]
 name = "lab2"
 version = "0.1.0"
 description = "This is the solution for CI/CD lab"
-authors = [
-    {name = "Ahmed Ibrahim"}
-]
-packages = [{include = "src"}]
+authors = ["Ahmed Ibrahim"]
 readme = "README.md"
-requires-python = ">=3.10"
-dependencies = [
-    "pydantic (>=2.11.9,<3.0.0)",
-    "pendulum (>=3.1.0,<4.0.0)"
-]
+packages = [{include = "src"}]
+
+[tool.poetry.dependencies]
+python = ">=3.10"
+pydantic = ">=2.11.9,<3.0.0"
+pendulum = ">=3.1.0,<4.0.0"
 
 
 [build-system]
