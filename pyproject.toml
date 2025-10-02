@@ -5,6 +5,7 @@ description = "This is the solution for CI/CD lab"
 authors = [
     {name = "Ahmed Ibrahim"}
 ]
+packages = [{include = "src"}]
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
