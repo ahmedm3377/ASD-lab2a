@@ -1,4 +1,5 @@
-name: Build and deploy code
+name: Employee App CI/CD
+
 on:
   push:
     branches:
@@ -6,3 +7,28 @@ on:
   pull_request:
     branches:
       - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+
+    - name: Install Poetry
+      run: |
+        pip install poetry
+
+    - name: Install dependencies
+      run: |
+        poetry install
+
+    - name: Run main script
+      run: |
+        poetry run python src/main.py
